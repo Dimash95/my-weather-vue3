@@ -84,14 +84,14 @@ onMounted(() => {
 
         <div class="searcher">
           <input
-            class="form-control me-2"
+            class="searcher__input form-control me-2"
             type="search"
             placeholder="Search..."
             aria-label="Search"
             v-model="inputValue"
             @keyup.enter="weatherBalloon"
           /><button
-            class="btn btn-outline-light"
+            class="searcher__btn btn btn-outline-light"
             @click="weatherBalloon"
             type="submit"
           >
@@ -127,7 +127,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="css">
 [v-cloak] {
   display: none;
 }
@@ -159,20 +159,20 @@ onMounted(() => {
   display: flex;
   gap: 60px;
 }
-.date {
-  .date__item {
-    margin: 0;
-  }
+
+.date__item {
+  margin: 0;
 }
+
 .searcher {
   display: inline-flex;
   align-items: center;
-  input {
-    height: 40px;
-  }
-  button {
-    height: 40px;
-  }
+}
+.searcher__input {
+  height: 40px;
+}
+.searcher__btn {
+  height: 40px;
 }
 .wrapper-content {
   display: flex;
@@ -184,10 +184,10 @@ onMounted(() => {
 
 .weather {
   margin-top: 40px;
-  .weather__city-name {
-    font-size: 40px;
-    padding: auto;
-  }
+}
+.weather__city-name {
+  font-size: 40px;
+  padding: auto;
 }
 
 .weather__description {
@@ -195,10 +195,9 @@ onMounted(() => {
   justify-content: space-around;
   align-items: center;
   margin-top: 60px;
-
-  .temp {
-    background-color: white;
-    font-size: 40px;
-  }
+}
+.temp {
+  background-color: white;
+  font-size: 40px;
 }
 </style>
