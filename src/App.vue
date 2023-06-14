@@ -84,14 +84,14 @@ onMounted(() => {
 
         <div class="searcher">
           <input
-            class="searcher__input form-control me-2"
+            class="form-control me-2"
             type="search"
             placeholder="Search..."
             aria-label="Search"
             v-model="inputValue"
             @keyup.enter="weatherBalloon"
           /><button
-            class="searcher__btn btn btn-outline-light"
+            class="btn btn-outline-light"
             @click="weatherBalloon"
             type="submit"
           >
@@ -105,8 +105,12 @@ onMounted(() => {
           {{ cityName }}
         </h1>
         <div class="weather__description">
-          <h2 class="temp badge rounded-pill text-bg-light">{{ temp }} °C</h2>
-          <div>
+          <p
+            class="badge rounded-pill text-bg-light weather__description__temp"
+          >
+            {{ temp }} °C
+          </p>
+          <div class="weather__description__other">
             <img
               v-if="icon"
               :src="`http://openweathermap.org/img/w/${icon}.png`"
@@ -137,6 +141,7 @@ onMounted(() => {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #app {
   display: flex;
   flex-direction: column;
@@ -147,6 +152,7 @@ onMounted(() => {
   background-size: cover;
   font-size: 20px;
 }
+
 .warm {
   background-image: url("./assets/img/warm.jpeg");
 }
@@ -168,12 +174,7 @@ onMounted(() => {
   display: inline-flex;
   align-items: center;
 }
-.searcher__input {
-  height: 40px;
-}
-.searcher__btn {
-  height: 40px;
-}
+
 .wrapper-content {
   display: flex;
   flex-direction: column;
@@ -184,9 +185,10 @@ onMounted(() => {
 
 .weather {
   margin-top: 40px;
-}
-.weather__city-name {
   font-size: 40px;
+}
+
+.weather__city-name {
   padding: auto;
 }
 
@@ -196,8 +198,12 @@ onMounted(() => {
   align-items: center;
   margin-top: 60px;
 }
-.temp {
-  background-color: white;
+
+.weather__description__temp {
   font-size: 40px;
+}
+
+.weather__description__other {
+  font-size: 20px;
 }
 </style>
