@@ -12,6 +12,6 @@ Stack:
 
 - [x] Git
 
-Deploy:
+Deploy: https://dimash95.github.io/my-weather-vue3/
 
 <img src="./src/assets/img/pic.png" width="300">
